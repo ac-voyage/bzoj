@@ -52,6 +52,7 @@ ll sp(int s, int t)
     {
         pli cur = q.top(); q.pop();
         int u = cur.se;
+        if (solid.test(u)) continue;
         solid.set(u);
         for (edge *e = u[front]; e; e = e->n)
         {
@@ -59,10 +60,7 @@ ll sp(int s, int t)
             if ( d[v] > d[u] + w )
             {
                 d[v] = d[u] + w;
-                if ( !solid.test(v) )
-                {
-                    q.push(mp(d[v], v));
-                }
+                q.push(mp(d[v], v));
             }
         }
     }
