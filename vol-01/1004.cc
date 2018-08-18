@@ -54,7 +54,6 @@ ll count(void)
         }
         ncir++;
     }
-    // fprintf(stderr, "ncir: %d, sz: %d\n", ncir, sz[0]);
     f[0][0][0] = 1ll;
     for (int c = 0; c < ncir; c++)
     {
@@ -67,7 +66,6 @@ ll count(void)
                     if (k >= sz[c]) add(f[i][j][k], f[i][j][k - sz[c]]);
                 }
     }
-    // fprintf(stderr, "f[%d][%d][%d] = %lld\n", sr, sb, sg, f[sr][sb][sg]);
     return f[sr][sb][sg];
 }
 
